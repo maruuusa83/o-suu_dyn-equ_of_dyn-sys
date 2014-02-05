@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%応用数学 運動座標における運動方程式のメモ
+%@maruuusa83
+%
+%2014.2.5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[twocolumn,a4j,10pt]{jarticle}
+%\documentclass[a4j,10pt]{jarticle}
+
+\usepackage{amsmath,amssymb}
+\newtheorem{thm}{定理}
+
+\makeatletter
+%ヘッダ定義
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{applied mathematics}
+\cfoot{\thepage}
+
+
+%文字サイズ定義
+\def\section{\@startsection {section}{1}{\z@}{3.5ex plus 1ex minus 2ex}{2.3 ex plus .2ex}{\fontsize{10pt}{0pt}\bf}}
+\def\subsection{\@startsection {subsection}{1}{\z@}{3.5ex plus 1ex minus 
+2ex}{2.3ex plus .2ex}{\fontsize{10pt}{0pt}\bf}}
+
+%式番号に節番号を含める
+\renewcommand{\theequation}{%
+\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+
+%表紙
+%
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \null\vfil
+    \hrule height 4pt
+    \vskip 10\p@
+      \LARGE 
+      \strut \@title \par
+    \begin{flushright}
+      \vskip 30\p@
+      \strut \@author
+    \end{flushright}
+    \vskip 5\p@
+    \hrule height 4pt
+    \vfil
+    \begin{flushright}
+        {\small \@date}%
+    \end{flushright}
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+\makeatother
+
+
+%ドキュメントの開始%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%表紙%%%%%%%%%%%%%%%%%%%
+\author{marusa}
+\title{運動座標系における運動方程式のメモ}
+\date{Feb, 2014}
+
+\maketitle
+
+%本文%%%%%%%%%%%%%%%%%%%
+\section{考えたいこと}
+
+
+\end{document}
