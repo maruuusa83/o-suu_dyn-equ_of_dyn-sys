@@ -109,7 +109,7 @@
 そのため先ず我々は、宇宙に存在している物体の絶対座標系における速度を求める必要がある。\newline
 
 
-\section{幾何学的考察}
+\section{速度を求めることについての考察}
 $\bm{R}$と$\bm{r}$の関係は次のように書くことができる。
 \begin{equation}
   \bm{R}(t) = \bm{a} + \bm{b}(t) + \bm{r}(t)
@@ -122,10 +122,11 @@ $\bm{R}$と$\bm{r}$の関係は次のように書くことができる。
   &=& \bf{v} \nonumber
 \end{eqnarray}
 ここで、地球の位置$\bm{a}$が絶対座標系において不変だとすると、式を整理して
-\begin{equation}
-  \frac{\mathrm{d}}{\mathrm{d} t} \bm{R} = \frac{\mathrm{d}}{\mathrm{d} t} \bm{b} + \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t}x_n \bm{e}_n
+\begin{eqnarray}
+  \frac{\mathrm{d}}{\mathrm{d} t} \bm{R} &=& \frac{\mathrm{d} \bm{b}}{\mathrm{d} t} + \frac{\mathrm{d} \bm{r}}{\mathrm{d} t} \nonumber \\
+  &=& \frac{\mathrm{d}}{\mathrm{d} t} \bm{b} + \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t}x_n \bm{e}_n
   \label{diff_of_R}
-\end{equation}
+\end{eqnarray}
 を得ることができる。(ただし、これが$t$の関数であることを忘れてはいけない。)\newline
 
 
@@ -250,13 +251,14 @@ $\bm{R}$と$\bm{r}$の関係は次のように書くことができる。
   \end{array} \right)
 \end{eqnarray}
 
-この貢献度$\Omega_n$のベクトルをベクトル$\bm{\Omega}$と名付ければ、次のように非常に美しい形にまとめることができる。
+式中の、貢献度$\Omega_n$を成分に持つベクトルを$\bm{\Omega}$と名付ければ、次のように非常に美しい形にまとめることができる。
 \begin{equation}
   x_1 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_1 + x_2 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_2 + x_3 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_3 = \bm{\Omega} \times \bm{r}
   \label{angular_speed}
 \end{equation}\newline
 
-\section{$\bf{r}$の一階微分}
+
+\section{$\bm{r}$の一階微分}
 改めて式(\ref{deｆｆ_of_R_2})を整理しよう。
 \begin{eqnarray}
   \frac{\mathrm{d} \bm{r}}{\mathrm{d} t} &=& \left\{ \frac{\mathrm{d}}{\mathrm{d} t} x_1 \cdot \bm{e}_1 + \frac{\mathrm{d}}{\mathrm{d} t} x_2 \cdot \bm{e}_2 + \frac{\mathrm{d}}{\mathrm{d} t}  x_3 \cdot \bm{e}_3 \right\} \nonumber \\
@@ -271,7 +273,53 @@ $\bm{R}$と$\bm{r}$の関係は次のように書くことができる。
   \label{deｆｆ_of_R_3}
 \end{eqnarray}
 
-幾何学的考察の章でも述べたが、$\bm{v}_r$は観測者からみた宇宙上の物体の速度ベクトルである。
+観測者からみた宇宙の物体の位置の微分を$\bm{v}_r$と置き換えた。幾何学的考察の章でも述べたが、$\bm{v}_r$は観測者からみた宇宙上の物体の速度ベクトルである。\newline
+
+
+\section{$\bm{r}$の一階微分に関するまとめ}
+ここで、もう一度目指す先を思い出そう。宇宙上に存在する物体の絶対座標系における速度を求めたいのであった。そのためには$\bm{R}$を微分する必要があったが我々に$\bm{R}$を知る術はなかった。であるので、式(\ref{diff_of_R})を用いて絶対静止系における速度を求める試みを行っている。
+
+\begin{equation}
+  \frac{\mathrm{d} \bm{R}}{\mathrm{d} t} = \frac{\mathrm{d} \bm{b}}{\mathrm{d} t} + \frac{\mathrm{d} \bm{r}}{\mathrm{d} t} \nonumber
+\end{equation}
+
+そして我々は$\bm{r}$の一階微分の値を手に入れることができた。すなわち、
+\begin{equation}
+  \frac{\mathrm{d} \bm{R}}{\mathrm{d} t} = \frac{\mathrm{d} \bm{b}}{\mathrm{d} t} + \bm{v}_r + \bm{\Omega} \times \bm{r}
+　\label{diff_of_R_5}
+\end{equation}
+を手に入れた。次は、$\bm{b}$の微分を求めることにしよう。\newline
+
+
+\section{$\bm{b}$を求める}
+観測者が地球の表面上で常に静止しているのであれば、$\bm{b}$は地球の自転のための変化であると考えられる。
+
+\begin{figure}[H]
+  \centering
+　\includegraphics[width=5cm]{./pic/rot.jpg}
+　\caption{地球の自転による観測者の軌道}
+　\newline
+\end{figure}
+
+ところでこれは、第6章で求めた観測者自身の速度であるので、式(\ref{deｆｆ_of_R_3})をそのまま使うことができる。
+すなわち、絶対座標系からみた地球の自転による観測者の運動は
+\begin{equation}
+  \frac{\mathrm{d} \bm{b}}{\mathrm{d} t} = \bm{\Omega} \times \bm{b} 
+  \label{diｆｆ_of_b}
+\end{equation}
+と表すことができる。\newline
+
+
+\section{$\bm{R}$の一階微分を得る}
+$\bm{b}$の一階微分が得られた。式(\ref{diff_of_R_5})に、得られた式(\ref{diｆｆ_of_b})を代入すれば、$\bm{R}$の一階微分を得る。
+
+\begin{eqnarray}
+  \frac{\mathrm{d} \bm{R}}{\mathrm{d} t} &=& \bm{\Omega} \times \bm{b} + \bm{v}_r + \bm{\Omega} \times \bm{r} \nonumber \\
+  &=& \bm{v}_r + \Omega \times \left\{ \bm{b} + \bm{r} \right\}
+　\label{diff_of_R_6}
+\end{eqnarray}
+
+これでRの一階微分、すなわち絶対座標系における宇宙に存在する物体の速度を求めることができた。
 
 \end{document}
 
