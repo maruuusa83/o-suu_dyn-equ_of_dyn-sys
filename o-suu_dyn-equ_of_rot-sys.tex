@@ -110,27 +110,27 @@
 
 
 \section{幾何学的考察}
-地球の位置が絶対座標系において不変だとすると、$\bm{R}$と$\bm{r}$の関係は次のように書くことができる。
+$\bm{R}$と$\bm{r}$の関係は次のように書くことができる。
 \begin{equation}
   \bm{R}(t) = \bm{a} + \bm{b}(t) + \bm{r}(t)
   \label{relation_between_R_r}
 \end{equation}
-ニュートンの運動方程式における速度は、$\bm{R}$を微分することで得ることができる。我々は$\bm{R}$は知らないものの、$\bm{ｒ}$を知っている。
+ここで、宇宙に存在する物体の速度は、$\bm{R}$を微分することで得ることができる。とはいえ我々は$\bm{R}$は知らない。しかし、$\bm{r}$ならば知っている。
 \begin{eqnarray}
   \frac{\mathrm{d}}{\mathrm{d} t} \bm{R} &=& \frac{\mathrm{d}}{\mathrm{d} t} \left\{ \bm{a} + \bm{b}(t) + \bm{r}(t) \right\} \nonumber \\
-　&=& \frac{\mathrm{d}}{\mathrm{d} t} \left\{ \bm{a} + \bm{b}(t) + \sum_{n=1}^{3}x_n (t) \bm{e}_n \right\} \nonumber \\
+　&=& \frac{\mathrm{d}}{\mathrm{d} t} \left\{ \bm{a} + \bm{b}(t) + \sum_{n=1}^{3} x_n (t) \bm{e}_n \right\} \nonumber \\
   &=& \bf{v} \nonumber
 \end{eqnarray}
-ところで、$\bm{a}$は一定であるので、式を整理して
+ここで、地球の位置$\bm{a}$が絶対座標系において不変だとすると、式を整理して
 \begin{equation}
-  \frac{\mathrm{d}}{\mathrm{d} t} \bm{R} = \bf{v} = \frac{\mathrm{d}}{\mathrm{d} t} \bm{b} + \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t}x_n \bm{e}_n
-  \label{deｆｆ_of_R}
+  \frac{\mathrm{d}}{\mathrm{d} t} \bm{R} = \frac{\mathrm{d}}{\mathrm{d} t} \bm{b} + \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t}x_n \bm{e}_n
+  \label{diff_of_R}
 \end{equation}
-を得ることができる。(ただし、これは$t$の関数である)\newline
+を得ることができる。(ただし、これが$t$の関数であることを忘れてはいけない。)\newline
 
 
 \section{観測者の座標系の運動について考える}
-宇宙上の物体を観測した観測者は沖縄にいるので、当然地球の自転によって運動している。だから、観測者の座標系が運動していることも検討しなければならない。
+宇宙上の物体を観測している観測者は沖縄高専にいるので、\textbf{本人は静止しているつもりでも、絶対座標系においては地球の自転によって運動している。}だから、観測者の座標系が運動していることも検討しなければならない。\newline
 
 ところで、\textbf{円周上を運動する点の位置ベクトルを$\bm{r}$と書くとき、$\bm{r}$の速度ベクトル$\frac{\mathrm{d}\bm{r}}{\mathrm{d}t}$は$\bm{r}$に垂直}であるから、
 \begin{equation}
@@ -181,7 +181,12 @@
 
 
 \section{$\bf{r}$の一階微分を得る}
-式(\ref{speed_of_observer_2})を、前に求めた式(\ref{deｆｆ_of_R})の第二項に代入して整理する。
+式(\ref{speed_of_observer_2})を、式(\ref{diff_of_R})で現れた次式
+\begin{equation}
+  \frac{\mathrm{d}}{\mathrm{d} t} \bm{r} = \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t}x_n \bm{e}_n
+  \label{deｆｆ_of_small_r}
+\end{equation}
+に代入して整理してみよう。
 
 \begin{eqnarray}
   \frac{\mathrm{d}}{\mathrm{d} t} \bm{r} &=& \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t} x_n \bm{e}_n \nonumber \\
@@ -190,13 +195,17 @@
       + \frac{\mathrm{d}}{\mathrm{d} t} x_3 \bm{e}_3 \nonumber \\
   &=& \frac{\mathrm{d}}{\mathrm{d} t} (x_1) \bm{e}_1 + x_1 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_1 \nonumber \\
   &+& \frac{\mathrm{d}}{\mathrm{d} t} (x_2) \bm{e}_2 + x_2 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_2 \nonumber \\
-  &+& \frac{\mathrm{d}}{\mathrm{d} t} (x_3) \bm{e}_3 + x_3 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_3 \nonumber \\
-  &=& \left\{ \frac{\mathrm{d}}{\mathrm{d} t} (x_1) \bm{e}_1 + \frac{\mathrm{d}}{\mathrm{d} t} (x_2) \bm{e}_2 + \frac{\mathrm{d}}{\mathrm{d} t} (x_3) \bm{e}_3 \right\} \nonumber \\
+  &+& \frac{\mathrm{d}}{\mathrm{d} t} (x_3) \bm{e}_3 + x_3 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_3 \nonumber
+\end{eqnarray}
+
+観測値に関する微分の項と基底ベクトルに関する微分の項に分けて整理すると、次式のようにまとめられる。
+\begin{eqnarray}
+  \frac{\mathrm{d}}{\mathrm{d} t} \bm{r} &=& \left\{ \frac{\mathrm{d}}{\mathrm{d} t} x_1 \cdot \bm{e}_1 + \frac{\mathrm{d}}{\mathrm{d} t} x_2 \cdot \bm{e}_2 + \frac{\mathrm{d}}{\mathrm{d} t} \cdot x_3 \bm{e}_3 \right\} \nonumber \\
   &+& \left\{ x_1 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_1 + x_2 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_2 + x_3 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_3 \right\}
   \label{deｆｆ_of_R_2}
 \end{eqnarray}
 
-この整理によって、式(\ref{deｆｆ_of_R_2})は、観測者の持つ座標系からみたrの速度ベクトルと、移動する運動座標系の速度ベクトルの和であることがわかる。
+式(\ref{deｆｆ_of_R_2})は、観測者の持つ座標系からみたrの速度ベクトル（初項）と、移動する運動座標系の速度ベクトル（第二項）の和であることがわかる。
 
 ここで、$\Omega_{12},\Omega_{23},\Omega_{31}$を改めて$\Omega_{3},\Omega_{1},\Omega_{2}$と書くことにして、これらを３成分とするベクトルを定義する：
 \begin{equation}
