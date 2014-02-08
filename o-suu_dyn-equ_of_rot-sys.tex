@@ -285,10 +285,41 @@ $\bm{R}$と$\bm{r}$の関係は次のように書くことができる。
 
 そして我々は$\bm{r}$の一階微分の値を手に入れることができた。すなわち、
 \begin{equation}
-  \frac{\mathrm{d} \bm{R}}{\mathrm{d} t} = \frac{\mathrm{d} \bm{b}}{\mathrm{d} t} + \bm{v}_r + \bm{\Omega} \times \bm{r}  \nonumber
+  \frac{\mathrm{d} \bm{R}}{\mathrm{d} t} = \frac{\mathrm{d} \bm{b}}{\mathrm{d} t} + \bm{v}_r + \bm{\Omega} \times \bm{r}
+　\label{diff_of_R_5}
 \end{equation}
-を手に入れた。次は、$\bm{b}$の微分を求めることにしよう。
+を手に入れた。次は、$\bm{b}$の微分を求めることにしよう。\newline
 
+
+\section{$\bm{b}$を求める}
+観測者が地球の表面上で常に静止しているのであれば、$\bm{b}$は地球の自転のための変化であると考えられる。
+
+\begin{figure}[H]
+  \centering
+　\includegraphics[width=5cm]{./pic/rot.jpg}
+　\caption{地球の自転による観測者の軌道}
+　\newline
+\end{figure}
+
+ところでこれは、第6章で求めた観測者自身の速度であるので、式(\ref{deｆｆ_of_R_3})をそのまま使うことができる。
+すなわち、絶対座標系からみた地球の自転による観測者の運動は
+\begin{equation}
+  \frac{\mathrm{d} \bm{b}}{\mathrm{d} t} = \bm{\Omega} \times \bm{b} 
+  \label{diｆｆ_of_b}
+\end{equation}
+と表すことができる。\newline
+
+
+\section{$\bm{R}$の一階微分を得る}
+$\bm{b}$の一階微分が得られた。式(\ref{diff_of_R_5})に、得られた式(\ref{diｆｆ_of_b})を代入すれば、$\bm{R}$の一階微分を得る。
+
+\begin{eqnarray}
+  \frac{\mathrm{d} \bm{R}}{\mathrm{d} t} &=& \bm{\Omega} \times \bm{b} + \bm{v}_r + \bm{\Omega} \times \bm{r} \nonumber \\
+  &=& \bm{v}_r + \Omega \times \left\{ \bm{b} + \bm{r} \right\}
+　\label{diff_of_R_6}
+\end{eqnarray}
+
+これでRの一階微分、すなわち絶対座標系における宇宙に存在する物体の速度を求めることができた。
 
 \end{document}
 
