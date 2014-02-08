@@ -123,7 +123,7 @@ $\bm{R}$と$\bm{r}$の関係は次のように書くことができる。
 \end{eqnarray}
 地球の位置$\bm{a}$が絶対座標系において不変だとすると、式を整理して
 \begin{eqnarray}
-  \frac{\mathrm{d}}{\mathrm{d} t} \bm{R} &=& \frac{\mathrm{d} \bm{b}}{\mathrm{d} t} + \frac{\mathrm{d} \bm{r}}{\mathrm{d} t} \nonumber \\
+  \frac{\mathrm{d} \bm{R}}{\mathrm{d} t} &=& \frac{\mathrm{d} \bm{b}}{\mathrm{d} t} + \frac{\mathrm{d} \bm{r}}{\mathrm{d} t} \nonumber \\
   &=& \frac{\mathrm{d} \bm{b}}{\mathrm{d} t} + \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t} (x_n \bm{e}_n)
   \label{diff_of_R}
 \end{eqnarray}
@@ -156,7 +156,6 @@ Rの微分を求めるために、まずは$\frac{\mathrm{d} \bm{b}}{\mathrm{d} 
 \end{equation}
 外積の性質から、$\bm{\Omega}$の向きは回転する向きに右ねじを回したときにねじが進む向きと同じにする。
 
-
 \begin{figure}[H]
   \centering
 　\includegraphics[width=5cm]{./pic/rot_r.jpg}
@@ -164,35 +163,27 @@ Rの微分を求めるために、まずは$\frac{\mathrm{d} \bm{b}}{\mathrm{d} 
 　\newline
 \end{figure}
 
-\section{観測者の座標系の運動について考える}
-宇宙上の物体を観測している観測者は沖縄高専にいるので、\textbf{本人は静止しているつもりでも、絶対座標系においては地球の自転によって運動している。}だから、観測者の座標系が運動していることも検討しなければならない。\newline
+\section{「観測者の座標系」の運動について考える}
+宇宙上の物体を観測している観測者は沖縄高専にいるので、本人は\textbf{地球上で静止した座標系を設定しているつもりでも、地球の自転によって座標系そのものが変化している。}このことについて考えよう。\newline
 
-自転する地球上に存在する人間が作る座標系であるから、当然この座標系の基底ベクトル$\bm{e}_1,\bm{e}_2,\bm{e}_3$も時間とともにその向きが変化する。
+地球の表面上に設定座標系であるから、この座標系の基底ベクトル$\bm{e}_1,\bm{e}_2,\bm{e}_3$は時間とともにその向きが変化してしまう。\newline
 
-この基底ベクトルの時間微分は、係数を、基底aに対する基底bの貢献度：$\Omega_{ab}$と書くことにしてまとめると、次のようになる。
-\begin{equation}
-  \left\{ \begin{array}{rl}
-\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_1 = \Omega_{11} \bm{e}_1 + \Omega_{12} \bm{e}_2 + \Omega_{13} \bm{e}_3 \\
-\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_2 = \Omega_{21} \bm{e}_1 + \Omega_{22} \bm{e}_2 + \Omega_{23} \bm{e}_3 \\
-\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_3 = \Omega_{31} \bm{e}_1 + \Omega_{32} \bm{e}_2 + \Omega_{33} \bm{e}_3
-  \label{speed_of_observer}
-  \end{array} \right.
-\end{equation}\newline
-
-ところで、\textbf{円周上を運動する点の位置ベクトルを$\bm{r}$と書くとき、$\bm{r}$の速度ベクトル$\frac{\mathrm{d}\bm{r}}{\mathrm{d}t}$は$\bm{r}$に垂直}であるから、
+ところで、\textbf{円周上を運動する点の位置ベクトルを$\bm{r}$と書くとき、$\bm{r}$の速度ベクトル$\frac{\mathrm{d}\bm{r}}{\mathrm{d}t}$は$\bm{r}$に垂直}である。よって、次のように他の基底ベクトルの和で表すことができる。
 \begin{equation}
   \frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t} = (係数)\bm{e}_2 + (係数)\bm{e}_3 \nonumber
 \end{equation}
 
-と表すことができる。すなわち、あるベクトルの微分は自ベクトルに垂直であるので、自ベクトル方向の成分は持たない。このことから、不要な成分を削除した次の式を得る。
+ここで、これらの係数を基底aに対する基底bの貢献度：$\Omega_{ab}$と書くことにしてまとめると、次のようになる。
 
 \begin{equation}
-  \left\{ \begin{array}{rl}
-\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_1 = \Omega_{12} \bm{e}_2 + \Omega_{13} \bm{e}_3 \\
-\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_2 = \Omega_{23} \bm{e}_3 + \Omega_{21} \bm{e}_1 \\
-\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_3 = \Omega_{31} \bm{e}_1 + \Omega_{32} \bm{e}_2
+\renewcommand{\arraystretch}{1.5}
+  \left\{ \begin{array}{c}
+\displaystyle \frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t} = \Omega_{12} \bm{e}_2 + \Omega_{13} \bm{e}_3 \\
+\displaystyle \frac{\mathrm{d} \bm{e}_2}{\mathrm{d} t} = \Omega_{23} \bm{e}_3 + \Omega_{21} \bm{e}_1 \\
+\displaystyle \frac{\mathrm{d} \bm{e}_3}{\mathrm{d} t} = \Omega_{31} \bm{e}_1 + \Omega_{32} \bm{e}_2
   \label{speed_of_observer}
   \end{array} \right.
+\renewcommand{\arraystretch}{1}
 \end{equation}\newline
 
 もう少しこの式を整理しよう。基底ベクトルは直交するので、その内積の値は0である。これを時間$t$で微分すると、
@@ -206,7 +197,6 @@ Rの微分を求めるために、まずは$\frac{\mathrm{d} \bm{b}}{\mathrm{d} 
   \frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t} \cdot \bm{e}_2 &=& \Omega_{12} \bm{e}_2 \cdot \bm{e}_2 + \Omega_{13} \bm{e}_3 \cdot \bm{e}_2 \nonumber \\
   &=& \Omega_{12} \nonumber
 \end{eqnarray}
-この内積は、$\bm{e}_1$方向の速度ベクトル$\frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t}$の$\bm{e}_2$に対する射影の大きさが$\Omega_{12}$であることを示している。\newline
 
 この２つの性質を用いると、それぞれの貢献度は次の関係を持つことがわかる。
 \begin{eqnarray}
@@ -217,12 +207,14 @@ Rの微分を求めるために、まずは$\frac{\mathrm{d} \bm{b}}{\mathrm{d} 
 このことから、式(\ref{speed_of_observer})の貢献度を3種類にまとめて次のように書き直すことができる。
 
 \begin{equation}
-  \left\{ \begin{array}{rl}
-\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_1 = \Omega_{12} \bm{e}_2 - \Omega_{31} \bm{e}_3 \\
-\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_2 = \Omega_{23} \bm{e}_3 - \Omega_{12} \bm{e}_1 \\
-\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_3 = \Omega_{31} \bm{e}_1 - \Omega_{23} \bm{e}_2
+\renewcommand{\arraystretch}{1.5}
+  \left\{ \begin{array}{c}
+\displaystyle \frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t} = \Omega_{12} \bm{e}_2 - \Omega_{31} \bm{e}_3 \\
+\displaystyle \frac{\mathrm{d} \bm{e}_2}{\mathrm{d} t} = \Omega_{23} \bm{e}_3 - \Omega_{12} \bm{e}_1 \\
+\displaystyle \frac{\mathrm{d} \bm{e}_3}{\mathrm{d} t} = \Omega_{31} \bm{e}_1 - \Omega_{23} \bm{e}_2
   \label{speed_of_observer_2}
   \end{array} \right.
+\renewcommand{\arraystretch}{1}
 \end{equation}
 
 この式は次の章の最後に用いる。
