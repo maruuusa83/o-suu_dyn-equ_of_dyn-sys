@@ -132,12 +132,24 @@ $\bm{R}$と$\bm{r}$の関係は次のように書くことができる。
 \section{観測者の座標系の運動について考える}
 宇宙上の物体を観測している観測者は沖縄高専にいるので、\textbf{本人は静止しているつもりでも、絶対座標系においては地球の自転によって運動している。}だから、観測者の座標系が運動していることも検討しなければならない。\newline
 
+自転する地球上に存在する人間が作る座標系であるから、当然この座標系の基底ベクトル$\bm{e}_1,\bm{e}_2,\bm{e}_3$も時間とともにその向きが変化する。
+
+この基底ベクトルの時間微分は、係数を、基底aに対する基底bの貢献度：$\Omega_{ab}$と書くことにしてまとめると、次のようになる。
+\begin{equation}
+  \left\{ \begin{array}{rl}
+\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_1 = \Omega_{11} \bm{e}_1 + \Omega_{12} \bm{e}_2 + \Omega_{13} \bm{e}_3 \\
+\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_2 = \Omega_{21} \bm{e}_1 + \Omega_{22} \bm{e}_2 + \Omega_{23} \bm{e}_3 \\
+\frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_3 = \Omega_{31} \bm{e}_1 + \Omega_{32} \bm{e}_2 + \Omega_{33} \bm{e}_3
+  \label{speed_of_observer}
+  \end{array} \right.
+\end{equation}\newline
+
 ところで、\textbf{円周上を運動する点の位置ベクトルを$\bm{r}$と書くとき、$\bm{r}$の速度ベクトル$\frac{\mathrm{d}\bm{r}}{\mathrm{d}t}$は$\bm{r}$に垂直}であるから、
 \begin{equation}
   \frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t} = (係数)\bm{e}_2 + (係数)\bm{e}_3 \nonumber
 \end{equation}
 
-と表すことができる。この係数を、基底aに対する基底bの貢献度：$\Omega_{ab}$と書くことにして他の軸についてもまとめると、
+と表すことができる。すなわち、あるベクトルの微分は自ベクトルに垂直であるので、自ベクトル方向の成分は持たない。このことから、不要な成分を削除した次の式を得る。
 
 \begin{equation}
   \left\{ \begin{array}{rl}
@@ -147,28 +159,27 @@ $\bm{R}$と$\bm{r}$の関係は次のように書くことができる。
   \label{speed_of_observer}
   \end{array} \right.
 \end{equation}\newline
-を得ることができる。\newline
 
-もう少しこの式を整理しよう。基底ベクトルは直行するので、その内積の値は0である。これを時間$t$で微分すると、
+もう少しこの式を整理しよう。基底ベクトルは直交するので、その内積の値は0である。これを時間$t$で微分すると、
 \begin{equation}
   \frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t} \bm{e}_2 + \bm{e}_1 \frac{\mathrm{d} \bm{e}_2}{\mathrm{d} t} = 0 \nonumber
 \end{equation}
 を得る。
 
-ところで、それぞれの式において次のように左辺の項が１つ消えるように基底ベクトルの内積をとると、次のような結果が得られる。
+さらに、式(\ref{speed_of_observer})のそれぞれの式において次のように左辺の項が１つ消えるように基底ベクトルの内積をとると、次のような結果が得られる。
 \begin{eqnarray}
   \frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t} \cdot \bm{e}_2 &=& \Omega_{12} \bm{e}_2 \cdot \bm{e}_2 + \Omega_{13} \bm{e}_3 \cdot \bm{e}_2 \nonumber \\
   &=& \Omega_{12} \nonumber
 \end{eqnarray}
-この内積は、$\bm{e}_1$方向の速度ベクトル$\frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t}$の$\bm{e}_2$に対する射影の大きさが$\Omega_{12}$であることを示している。
+この内積は、$\bm{e}_1$方向の速度ベクトル$\frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t}$の$\bm{e}_2$に対する射影の大きさが$\Omega_{12}$であることを示している。\newline
 
-この２つの性質を用いると、次の性質を持つことがわかる。
+この２つの性質を用いると、それぞれの貢献度は次の関係を持つことがわかる。
 \begin{eqnarray}
   \Omega_{12} + \Omega_{21} = 0 \nonumber \\
   \Omega_{23} + \Omega_{32} = 0 \nonumber \\
   \Omega_{31} + \Omega_{13} = 0 \nonumber
 \end{eqnarray}
-このことから、式(\ref{speed_of_observer})は次のように書き直すことができる。
+このことから、式(\ref{speed_of_observer})の貢献度を3種類にまとめて次のように書き直すことができる。
 
 \begin{equation}
   \left\{ \begin{array}{rl}
@@ -177,45 +188,70 @@ $\bm{R}$と$\bm{r}$の関係は次のように書くことができる。
 \frac{\mathrm{d} }{\mathrm{d} t} \bm{e}_3 = \Omega_{31} \bm{e}_1 - \Omega_{23} \bm{e}_2
   \label{speed_of_observer_2}
   \end{array} \right.
-\end{equation}\newline
+\end{equation}
+
+この式は次の章の最後に用いる。
 
 
 \section{$\bf{r}$の一階微分を得る}
-式(\ref{speed_of_observer_2})を、式(\ref{diff_of_R})で現れた次式
+式(\ref{diff_of_R})で現れた、$\bm{r}$の変化率を表す式
 \begin{equation}
-  \frac{\mathrm{d}}{\mathrm{d} t} \bm{r} = \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t}x_n \bm{e}_n
+  \frac{\mathrm{d} \bm{r}}{\mathrm{d} t} = \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t}x_n \bm{e}_n
   \label{deｆｆ_of_small_r}
 \end{equation}
-に代入して整理してみよう。
+について考えていこう。
 
+先ずはこの式が幾何学的に何を意味しているのか考える。
 \begin{eqnarray}
-  \frac{\mathrm{d}}{\mathrm{d} t} \bm{r} &=& \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t} x_n \bm{e}_n \nonumber \\
-  &=& \frac{\mathrm{d}}{\mathrm{d} t} x_1 \bm{e}_1
-      + \frac{\mathrm{d}}{\mathrm{d} t} x_2 \bm{e}_2
-      + \frac{\mathrm{d}}{\mathrm{d} t} x_3 \bm{e}_3 \nonumber \\
-  &=& \frac{\mathrm{d}}{\mathrm{d} t} (x_1) \bm{e}_1 + x_1 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_1 \nonumber \\
-  &+& \frac{\mathrm{d}}{\mathrm{d} t} (x_2) \bm{e}_2 + x_2 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_2 \nonumber \\
-  &+& \frac{\mathrm{d}}{\mathrm{d} t} (x_3) \bm{e}_3 + x_3 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_3 \nonumber
+  \frac{\mathrm{d} \bm{r}}{\mathrm{d} t} &=& \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t} x_n \bm{e}_n \nonumber \\
+  &=& \frac{\mathrm{d}}{\mathrm{d} t} (x_1 \bm{e}_1)
+      + \frac{\mathrm{d}}{\mathrm{d} t} (x_2 \bm{e}_2)
+      + \frac{\mathrm{d}}{\mathrm{d} t} (x_3 \bm{e}_3) \nonumber \\
+  &=& \frac{\mathrm{d}}{\mathrm{d} t} x_1 \cdot \bm{e}_1 + x_1 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_1 \nonumber \\
+  &+& \frac{\mathrm{d}}{\mathrm{d} t} x_2 \cdot \bm{e}_2 + x_2 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_2 \nonumber \\
+  &+& \frac{\mathrm{d}}{\mathrm{d} t} x_3 \cdot \bm{e}_3 + x_3 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_3 \nonumber
 \end{eqnarray}
-
-観測値に関する微分の項と基底ベクトルに関する微分の項に分けて整理すると、次式のようにまとめられる。
+この式を、観測値に関する微分の項と基底ベクトルに関する微分の項に分けて整理すると、次式のようにまとめられる。
 \begin{eqnarray}
-  \frac{\mathrm{d}}{\mathrm{d} t} \bm{r} &=& \left\{ \frac{\mathrm{d}}{\mathrm{d} t} x_1 \cdot \bm{e}_1 + \frac{\mathrm{d}}{\mathrm{d} t} x_2 \cdot \bm{e}_2 + \frac{\mathrm{d}}{\mathrm{d} t} \cdot x_3 \bm{e}_3 \right\} \nonumber \\
+  \frac{\mathrm{d} \bm{r}}{\mathrm{d} t} &=& \left\{ \frac{\mathrm{d}}{\mathrm{d} t} x_1 \cdot \bm{e}_1 + \frac{\mathrm{d}}{\mathrm{d} t} x_2 \cdot \bm{e}_2 + \frac{\mathrm{d}}{\mathrm{d} t}  x_3 \cdot \bm{e}_3 \right\} \nonumber \\
   &+& \left\{ x_1 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_1 + x_2 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_2 + x_3 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_3 \right\}
   \label{deｆｆ_of_R_2}
 \end{eqnarray}
 
-式(\ref{deｆｆ_of_R_2})は、観測者の持つ座標系からみたrの速度ベクトル（初項）と、移動する運動座標系の速度ベクトル（第二項）の和であることがわかる。
+式(\ref{deｆｆ_of_R_2})の初項は、観測した$\bm{r}$の成分ごとの微分なので、\textbf{観測者の座標系からみた宇宙に存在する物体の速度ベクトル}である。また、第二項は座標系自身の変化率を表しているので、\textbf{観測者の座標系自身の速度ベクトル}である。\newline
 
-ここで、$\Omega_{12},\Omega_{23},\Omega_{31}$を改めて$\Omega_{3},\Omega_{1},\Omega_{2}$と書くことにして、これらを３成分とするベクトルを定義する：
-\begin{equation}
-  \bm{\Omega} = \Omega_1 \bm{e}_1 + \Omega_2 \bm{e}_2 + \Omega_3 \bm{e}_3
-  \label{angular_speed}
-\end{equation}
-このベクトルを用いると、式(\ref{deｆｆ_of_R_2})は外積を用いて次のように非常に簡単な形で表すことができる。
+さて、この式(\ref{deｆｆ_of_R_2})の第二項に、4章で求めた式(\ref{speed_of_observer_2})を代入して、基底ベクトルごとに整理してみる。
+\begin{eqnarray}
+  & & x_1 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_1 + x_2 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_2 + x_3 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_3 \nonumber \\
+  &=& x_1 \left( \Omega_{12} \bm{e}_2 - \Omega_{31} \bm{e}_3 \right) \nonumber \\
+  &+& x_2 \left( \Omega_{23} \bm{e}_3 - \Omega_{12} \bm{e}_1 \right) \nonumber \\
+  &+& x_3 \left( \Omega_{31} \bm{e}_1 - \Omega_{23} \bm{e}_2 \right) \nonumber \\
+  &=& \left( x_3 \Omega_{31} - x_2 \Omega_{12} \right) \bm{e}_1 \nonumber \\
+  &+& \left( x_1 \Omega_{12} - x_3 \Omega_{23} \right) \bm{e}_2 \nonumber \\
+  &+& \left( x_2 \Omega_{23} - x_1 \Omega_{31} \right) \bm{e}_3
+  \label{deｆｆ_of_R_3}
+\end{eqnarray}
 
+ここで、$\Omega_{12},\Omega_{23},\Omega_{31}$を改めて$\Omega_{3},\Omega_{1},\Omega_{2}$と書くことにして、行列形式表示にすると、見やすくまとまる。
+
+\begin{eqnarray}
+  & & x_1 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_1 + x_2 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_2 + x_3 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_3 \nonumber \\
+  &=& \left( \begin{array}{c}
+    \Omega_1 \\
+    \Omega_2 \\
+    \Omega_3
+  \end{array} \right)
+  \times 
+  \left( \begin{array}{c}
+    x_1 \\
+    x_2 \\
+    x_3
+  \end{array} \right)
+\end{eqnarray}
+
+この貢献度$\Omega_n$のベクトルをベクトル$\bm{\Omega}$と名付ければ、次のように非常に美しい形にまとめることができる。
 \begin{equation}
-  \frac{\mathrm{d} \bm{R}}{\mathrm{d} t} = \bm{\Omega} \times \bm{r}
+  x_1 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_1 + x_2 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_2 + x_3 \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_3 = \bm{\Omega} \times \bm{r}
   \label{angular_speed}
 \end{equation}
 
