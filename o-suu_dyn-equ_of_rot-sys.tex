@@ -119,9 +119,9 @@
 　&=& \frac{\mathrm{d}}{\mathrm{d} t} \left\{ \bm{a} + \bm{b}(t) + \sum_{n=1}^{3}x_n (t) \bm{e}_n \right\} \nonumber \\
   &=& \bf{v} \nonumber
 \end{eqnarray}
-ここで、簡単のために観測者が極点にいた場合を考える。すると$\bm{b}$は一定となるので、
+ところで、$\bm{a}$は一定であるので、式を整理して
 \begin{equation}
-  \frac{\mathrm{d}}{\mathrm{d} t} \bm{R} = \bf{v} = \sum_{n=1}^{3}x_n \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_n
+  \frac{\mathrm{d}}{\mathrm{d} t} \bm{R} = \bf{v} = \frac{\mathrm{d}}{\mathrm{d} t} \bm{b} + \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t}x_n \bm{e}_n
   \label{deｆｆ_of_R}
 \end{equation}
 を得ることができる。(ただし、これは$t$の関数である)\newline
@@ -156,6 +156,7 @@
   \frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t} \cdot \bm{e}_2 &=& \Omega_{12} \bm{e}_2 \cdot \bm{e}_2 + \Omega_{13} \bm{e}_3 \cdot \bm{e}_2 \nonumber \\
   &=& \Omega_{12} \nonumber
 \end{eqnarray}
+この内積は、$\bm{e}_1$方向の速度ベクトル$\frac{\mathrm{d} \bm{e}_1}{\mathrm{d} t}$の$\bm{e}_2$に対する射影の大きさが$\Omega_{12}$であることを示している。
 
 この２つの性質を用いると、次の性質を持つことがわかる。
 \begin{eqnarray}
@@ -175,20 +176,14 @@
 \end{equation}\newline
 
 
-\section{Rの一階微分を得る}
-式(\ref{speed_of_observer_2})を、前に求めた式(\ref{deｆｆ_of_R})に代入して整理する。
+\section{$\bf{r}$の一階微分を得る}
+式(\ref{speed_of_observer_2})を、前に求めた式(\ref{deｆｆ_of_R})の第二項に代入して整理する。
 
 \begin{eqnarray}
-  \frac{\mathrm{d}}{\mathrm{d} t} \bm{R} &=& \sum_{n=1}^{3}x_n (t) \frac{\mathrm{d}}{\mathrm{d} t} \bm{e}_n \nonumber \\
-  &=& x_1 \cdot \frac{\mathrm{d}\bm{e}_1}{\mathrm{d} t}
-+ x_2 \cdot \frac{\mathrm{d}\bm{e}_2}{\mathrm{d} t}
-+ x_3 \cdot \frac{\mathrm{d}\bm{e}_3}{\mathrm{d} t} \nonumber \\
-  &=& x_1 \left( \Omega_{12} \bm{e}_2 - \Omega_{31} \bm{e}_3 \right) \nonumber \\
-  & & + x_2 \left( \Omega_{23} \bm{e}_3 - \Omega_{12} \bm{e}_1 \right) \nonumber \\
-  & & + x_3 \left( \Omega_{31} \bm{e}_1 - \Omega_{23} \bm{e}_2 \right) \nonumber \\
-  &=& (\Omega_{31} x_3 - \Omega_{12} x_2) \bm{e}_1 \nonumber \\
-  & & + (\Omega_{12} x_1 - \Omega_{23} x_3) \bm{e}_2 \nonumber \\
-  & & + (\Omega_{23} x_2 - \Omega_{31} x_1) \bm{e}_3
+  \frac{\mathrm{d}}{\mathrm{d} t} \bm{R} &=& \sum_{n=1}^{3} \frac{\mathrm{d}}{\mathrm{d} t} x_n \bm{e}_n \nonumber \\
+  &=& \frac{\mathrm{d}}{\mathrm{d} t} x_1 \bm{e}_1
+      + \frac{\mathrm{d}}{\mathrm{d} t} x_2 \bm{e}_2
+      + \frac{\mathrm{d}}{\mathrm{d} t} x_3 \bm{e}_3
   \label{deｆｆ_of_R_2}
 \end{eqnarray}
 
